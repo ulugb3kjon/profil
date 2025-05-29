@@ -36,3 +36,20 @@ window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+document.querySelectorAll('.copy-text').forEach(elem => {
+  elem.addEventListener('click', () => {
+    const text = elem.dataset.copy;
+
+    navigator.clipboard.writeText(text).then(() => {
+      elem.classList.add('copied');
+
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+
+      setTimeout(() => {
+        elem.classList.remove('copied');
+        toast.classList.remove('show');
+      }, 1500);
+    });
+  });
+});
