@@ -5,11 +5,11 @@ canvas.height = window.innerHeight;
 
 let squares = [];
 
-for (let i = 0; i < 250; i++) {
+for (let i = 0; i < 500; i++) {
   squares.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    size: Math.random() * 3,
+    size: Math.random() * 4,
     speed: Math.random() * 1.5 + 0.5
   });
 }
